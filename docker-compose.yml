@@ -1,0 +1,31 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3001:3001"
+    environment:
+      - JWT_SECRET=hana
+      - DB_HOST=db
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=hana
+      - DB_DATABASE=database_development
+      - DB_DIALECT=postgres
+    depends_on:
+      - db
+    networks:
+      - soilproject
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: hana
+      POSTGRES_DB: database_development
+    ports:
+      - "5432:5432"
+    networks:
+      - soilproject
+
+networks:
+  soilproject:
+    driver: bridge
