@@ -47,15 +47,15 @@ This repository contains the backend service for **Soil Spaces**, a co-working a
    2. Run the application using Docker Compose:
       docker-compose up --build
 
-### API Endpoints
+## API Endpoints
 
-## User Endpoints
+### User Endpoints
 
 1. GET /spaces
 2. POST /bookings
 3. GET /bookings/:id
 
-## Admin Endpoints
+### Admin Endpoints
 
 1. POST /spaces
 2. PATCH /spaces/:id
@@ -64,7 +64,7 @@ This repository contains the backend service for **Soil Spaces**, a co-working a
 5. PATCH /booking/:id: Update the status of a booking (e.g.,
    Pending, Confirmed, Completed, Cancelled).
 
-## Users
+### Users
 
     Users who are logged in and have a role of an admin are given a token to add in the bearer section of the Auth header, the token expires after an hour.
     Only admins can:
